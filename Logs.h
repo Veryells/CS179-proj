@@ -1,5 +1,7 @@
 #ifndef LOGS_H
 #define LOGS_H
+#include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -13,7 +15,7 @@ class Logs
         Logs(); 
         ~Logs();
 
-        void printToLogs(std::string s);
+        void printToLogs(string s);
 
 };
 
