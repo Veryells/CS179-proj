@@ -2,13 +2,15 @@
 #define LOGS_H
 #include <string>
 #include <fstream>
+#include <chrono>
+#include <ctime>
 
 using namespace std;
 
 class Logs
 {
     private:
-        const string logFile = "Logs/Logs.txt";
+        const char* logFile = "Data/Logs.txt";
         ofstream outputFile;
 
     public:

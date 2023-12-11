@@ -5,23 +5,27 @@
 #include <unordered_map>
 #include <ctime>
 #include <chrono>
+#include <fstream>
+#include <iostream>
 
 using namespace std;
 
 class Employee_DB
 {
     private: 
+        const char* employeeFile = "Data/employeeDB.txt";
         unordered_map<string, double> db;
-        time_t start, end, total;
+        chrono::system_clock::time_point start;
         string curr_employee;
 
 
     public:
-        Employee_DB(/*file*/);
-        ~Employee_DB();
+        Employee_DB();
+        //~Employee_DB();
 
         void Initial_logIn(string name);
         void logIn(string name);
+        void update_file();
 };
 
 #endif

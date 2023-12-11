@@ -1,7 +1,4 @@
 #include "Logs.h"
-#include <fstream>
-#include <chrono>
-#include <ctime>
 
 using namespace std;
 
@@ -28,7 +25,7 @@ Logs::~Logs()
 //prints to logs
 //gets gmt time then converts to utc-8
 //places time then string into logs
-void printToLogs(string s)
+void Logs::printToLogs(string s)
 {
     time_t curr_time = time(NULL);
 

@@ -1,22 +1,21 @@
-#ifndef MANIFEST_H
-#define MANIFEST_H
+#ifndef EMPLOYEE_DB_H
+#define EMPLOYEE_DB_H
 
-#include <utility>
 #include <string>
-#include <fstream>
-#include <iomanip>
-#include <iostream>
+#include <unordered_map>
+#include <ctime>
 
 using namespace std;
 
-class Manifest
+class Employee_DB
 {
-    private:
-        pair<int, string> manif[8][12];
-        string manifName;
+    private: 
+        unordered_map<string, double> db;
+        time_t start, end, total;
+
 
     public:
-        Manifest(/*file*/);
+        Employee_DB(/*file*/);
         ~Manifest();
 
         void placeContainer(int x, int y, pair<int, string> c);
