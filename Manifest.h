@@ -16,7 +16,7 @@ class Manifest
         string manifName;
 
     public:
-        Manifest(/*file*/);
+        Manifest(string filepath);
         ~Manifest();
 
         void placeContainer(int x, int y, pair<int, string> c);

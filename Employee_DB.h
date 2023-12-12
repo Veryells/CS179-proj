@@ -26,6 +26,7 @@ class Employee_DB
         void Initial_logIn(string name);
         void logIn(string name);
         void update_file();
+        string get_currEmployee();
 };
 
 #endif

@@ -83,3 +83,7 @@ void Employee_DB::update_file()
 
     cout << "File updated successfully." << std::endl;
 }
+
+string Employee_DB::get_currEmployee() {
+    return curr_employee;
+}

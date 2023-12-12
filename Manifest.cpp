@@ -3,15 +3,19 @@
 using namespace std;
 
 //Manifest constructor
-Manifest::Manifest(/*file path*/)
+Manifest::Manifest(string filepath)
 {
-    //store manifest name
-    manifName = /*manifest name*/;
+    size_t lastSeparator = filepath.find_last_of("/\\");
+    size_t lastPeriod = filepath.find_last_of('.');
+    //store manifest name from / to file extension
+    manifName = filepath.substr(lastSeparator,lastPeriod);
+
+    ifstream file(filepath);
 
     string line, weight, container_name;
     size_t openBracePos, closeBracePos, secondCommaPos;
     int x = 1, y = 1, run = 0;
-    while (getline(/*file*/, line)) {
+    while (getline(file, line)) {
         // Find the position of { and }
         openBracePos = line.find('{');
         closeBracePos = line.find('}');
@@ -71,7 +75,8 @@ pair<int, string> Manifest::getContainer(int x, int y)
 void Manifest::outputNewManifest()
 {
     pair<int, string> temp;
-    ofstream newManifest(/*string name of newmanifest*/);
+    string outName = manifName + "Outbound.txt";
+    ofstream newManifest(outName);
     if (newManifest.is_open()) {   
         for(int x = 0; x < 8; x++) {
             for(int y = 0; y < 12; y++) {
