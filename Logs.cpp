@@ -29,8 +29,8 @@ void Logs::printToLogs(string s)
 {
     time_t curr_time = time(NULL);
 
-    tm *tm_gmt = gmtime(&curr_time);
-    tm_gmt->tm_hour -= 8;                   // I dunno if this works
+    tm *tm_gmt = localtime(&curr_time);
+    //tm_gmt->tm_hour -= 8;                   // I dunno if this works
     outputFile << 1 + tm_gmt->tm_mon<< "/"  //?
             << tm_gmt->tm_mday<< "/"
             << (1900 + tm_gmt->tm_year) / 100<< " "
